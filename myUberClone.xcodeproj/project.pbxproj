@@ -3,27 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6642DEB78C9D6533D3BFC6 /* Pods_myUberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E375528CC7D470F6CC378E /* Pods_myUberClone.framework */; };
+		9D04ECC523E9ED0E004FC669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D04ECC423E9ED0E004FC669 /* GoogleService-Info.plist */; };
+		9D04ECC823E9F902004FC669 /* PhoneLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D04ECC723E9F902004FC669 /* PhoneLoginVC.swift */; };
+		9D04ECCA23EA14B0004FC669 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D04ECC923EA14B0004FC669 /* OtpVC.swift */; };
 		9DA919F323E91673008F837C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA919F223E91673008F837C /* AppDelegate.swift */; };
 		9DA919F523E91673008F837C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA919F423E91673008F837C /* SceneDelegate.swift */; };
-		9DA919F723E91673008F837C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA919F623E91673008F837C /* ViewController.swift */; };
 		9DA919FA23E91673008F837C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA919F823E91673008F837C /* Main.storyboard */; };
 		9DA919FC23E91674008F837C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA919FB23E91674008F837C /* Assets.xcassets */; };
 		9DA919FF23E91674008F837C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA919FD23E91674008F837C /* LaunchScreen.storyboard */; };
+		9DA91A0C23E9181A008F837C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA91A0B23E9181A008F837C /* LoginVC.swift */; };
+		9DA91A0E23E91C77008F837C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA91A0D23E91C77008F837C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A9179197DD5B282A5A9D14F /* Pods-myUberClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myUberClone.release.xcconfig"; path = "Target Support Files/Pods-myUberClone/Pods-myUberClone.release.xcconfig"; sourceTree = "<group>"; };
+		32E375528CC7D470F6CC378E /* Pods_myUberClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myUberClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9656F8EE420399709726A90E /* Pods-myUberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myUberClone.debug.xcconfig"; path = "Target Support Files/Pods-myUberClone/Pods-myUberClone.debug.xcconfig"; sourceTree = "<group>"; };
+		9D04ECC423E9ED0E004FC669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D04ECC723E9F902004FC669 /* PhoneLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLoginVC.swift; sourceTree = "<group>"; };
+		9D04ECC923EA14B0004FC669 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		9DA919EF23E91673008F837C /* myUberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myUberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA919F223E91673008F837C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA919F423E91673008F837C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9DA919F623E91673008F837C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA919F923E91673008F837C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DA919FB23E91674008F837C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DA919FE23E91674008F837C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DA91A0023E91674008F837C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA91A0B23E9181A008F837C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9DA91A0D23E91C77008F837C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6642DEB78C9D6533D3BFC6 /* Pods_myUberClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,8 @@
 			children = (
 				9DA919F123E91673008F837C /* myUberClone */,
 				9DA919F023E91673008F837C /* Products */,
+				DE8726F34FC2D176C76BFFB5 /* Pods */,
+				AEA0F07DEDE5AB246885029D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +71,76 @@
 		9DA919F123E91673008F837C /* myUberClone */ = {
 			isa = PBXGroup;
 			children = (
+				9DA91A0A23E9177D008F837C /* Utils */,
+				9DA91A0923E9176F008F837C /* Service */,
+				9DA91A0823E91762008F837C /* Controller */,
+				9DA91A0723E91754008F837C /* View */,
+				9DA91A0623E9174F008F837C /* Model */,
 				9DA919F223E91673008F837C /* AppDelegate.swift */,
 				9DA919F423E91673008F837C /* SceneDelegate.swift */,
-				9DA919F623E91673008F837C /* ViewController.swift */,
 				9DA919F823E91673008F837C /* Main.storyboard */,
 				9DA919FB23E91674008F837C /* Assets.xcassets */,
 				9DA919FD23E91674008F837C /* LaunchScreen.storyboard */,
 				9DA91A0023E91674008F837C /* Info.plist */,
+				9D04ECC423E9ED0E004FC669 /* GoogleService-Info.plist */,
 			);
 			path = myUberClone;
+			sourceTree = "<group>";
+		};
+		9DA91A0623E9174F008F837C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DA91A0723E91754008F837C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9DA91A0823E91762008F837C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9DA91A0B23E9181A008F837C /* LoginVC.swift */,
+				9D04ECC723E9F902004FC669 /* PhoneLoginVC.swift */,
+				9D04ECC923EA14B0004FC669 /* OtpVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9DA91A0923E9176F008F837C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9DA91A0A23E9177D008F837C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9DA91A0D23E91C77008F837C /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AEA0F07DEDE5AB246885029D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32E375528CC7D470F6CC378E /* Pods_myUberClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE8726F34FC2D176C76BFFB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9656F8EE420399709726A90E /* Pods-myUberClone.debug.xcconfig */,
+				1A9179197DD5B282A5A9D14F /* Pods-myUberClone.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DA91A0323E91674008F837C /* Build configuration list for PBXNativeTarget "myUberClone" */;
 			buildPhases = (
+				041B01EB80421F3638BDD665 /* [CP] Check Pods Manifest.lock */,
 				9DA919EB23E91673008F837C /* Sources */,
 				9DA919EC23E91673008F837C /* Frameworks */,
 				9DA919ED23E91673008F837C /* Resources */,
+				FEA3DC31D1ED72C33B915FD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DA919FF23E91674008F837C /* LaunchScreen.storyboard in Resources */,
+				9D04ECC523E9ED0E004FC669 /* GoogleService-Info.plist in Resources */,
 				9DA919FC23E91674008F837C /* Assets.xcassets in Resources */,
 				9DA919FA23E91673008F837C /* Main.storyboard in Resources */,
 			);
@@ -133,14 +212,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		041B01EB80421F3638BDD665 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myUberClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEA3DC31D1ED72C33B915FD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myUberClone/Pods-myUberClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myUberClone/Pods-myUberClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myUberClone/Pods-myUberClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DA919EB23E91673008F837C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA919F723E91673008F837C /* ViewController.swift in Sources */,
+				9D04ECCA23EA14B0004FC669 /* OtpVC.swift in Sources */,
+				9D04ECC823E9F902004FC669 /* PhoneLoginVC.swift in Sources */,
 				9DA919F323E91673008F837C /* AppDelegate.swift in Sources */,
 				9DA919F523E91673008F837C /* SceneDelegate.swift in Sources */,
+				9DA91A0C23E9181A008F837C /* LoginVC.swift in Sources */,
+				9DA91A0E23E91C77008F837C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +406,7 @@
 		};
 		9DA91A0423E91674008F837C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9656F8EE420399709726A90E /* Pods-myUberClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +425,7 @@
 		};
 		9DA91A0523E91674008F837C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A9179197DD5B282A5A9D14F /* Pods-myUberClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
