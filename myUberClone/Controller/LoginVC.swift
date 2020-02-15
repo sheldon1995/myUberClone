@@ -95,8 +95,7 @@ class LoginVC: UIViewController {
     
     // MARK: Handlers
     @objc func jumpToPhoneLogin(){
-      let phoneLoginVC = PhoneLoginVC()
-//        navigationController?.pushViewController(phoneLoginVC, animated: true)
+        let phoneLoginVC = PhoneLoginVC()
         
         let navController = UINavigationController(rootViewController: phoneLoginVC)
         navController.modalPresentationStyle = .fullScreen
@@ -116,7 +115,5 @@ class LoginVC: UIViewController {
     func configureNavigationBar(){
         navigationController?.navigationBar.isHidden = true
     }
-    
-    
     
 }

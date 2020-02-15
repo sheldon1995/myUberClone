@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DA7765B8-DD39-4D3C-B540-338D38B49B4C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65DFFA24-D1D8-4ECD-AFCA-437C5A214150"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myUberClone/Controller/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "HomeVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "65DFFA24-D1D8-4ECD-AFCA-437C5A214150 - 84aab4fd233680f4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myUberClone.HomeVC.locationTableView.getter : __C.UITableView"
+                  moduleName = "myUberClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiewentao/Desktop/myUberClone/myUberClone/Controller/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "65DFFA24-D1D8-4ECD-AFCA-437C5A214150 - 7f3df78d440338c8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myUberClone.HomeVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; myUberClone.HomeVC"
+                  moduleName = "myUberClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiewentao/Desktop/myUberClone/myUberClone/Controller/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "423">
+               </Location>
+               <Location
+                  uuid = "65DFFA24-D1D8-4ECD-AFCA-437C5A214150 - 51ef06aaff09733"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myUberClone.HomeVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;myUberClone.HomeVC&gt;"
+                  moduleName = "myUberClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiewentao/Desktop/myUberClone/myUberClone/Controller/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "449B5AD9-6C32-4A44-9FE8-C6BDAFDE6F53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myUberClone/Model/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "User"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

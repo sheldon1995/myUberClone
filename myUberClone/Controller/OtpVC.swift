@@ -8,10 +8,12 @@
 
 import UIKit
 import Firebase
+import GeoFire
+let phone = UserDefaults.standard.string(forKey: "userPhoneNumber")
+
 class OtpVC: UIViewController {
     // MARK: Properties
-    var phoneNumber : String?
-    
+   
     
     let label:UILabel = {
         let label = UILabel()
@@ -44,6 +46,8 @@ class OtpVC: UIViewController {
         view.backgroundColor = .white
         
         configureUI()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +61,7 @@ class OtpVC: UIViewController {
     @objc func handleVerifyPhoneNumber(){
         
         guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else {return}
+        
         // guard let optCode = otpTextField.text else {return}
         
         let credential = PhoneAuthProvider.provider().credential(
@@ -69,20 +74,31 @@ class OtpVC: UIViewController {
                 return
             }
             else{
-                // Jump to main page.
-                print("User successfully signed in!")
+                guard let currentUid = Auth.auth().currentUser?.uid else {return}
+                
+                USER_REF.observeSingleEvent(of: .value) { (snapshot) in
+                    if(snapshot.hasChild(currentUid)){
+                        // Jump to main mage
+                        self.jumpToMainVC()
+                    }
+                    else{
+                        // Jump to information confirmation page.
+                        let confirmInformation = ConfirmInformationVC()
+                        self.navigationController?.pushViewController(confirmInformation, animated: true)
+                    }
+                }
+                
             }
             
         }
-        
     }
+    
     
     // MARK: API
     func configureUI(){
         view.addSubview(label)
         label.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 80, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 0, height: 120)
-        guard let phoneNumber = self.phoneNumber else {return}
-        label.text = "Enter the 4-digit code sent to you at \(phoneNumber) "
+        label.text = "Enter the 6-digit code sent to you at \(phone!) "
         
         view.addSubview(otpTextField)
         otpTextField.anchor(top: label.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 30, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)

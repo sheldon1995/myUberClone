@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+
+
 class PhoneLoginVC: UIViewController {
     
     // MARK: Properties
@@ -62,6 +64,7 @@ class PhoneLoginVC: UIViewController {
     @objc func handleReceivePhoneNumber(){
         
         guard let phoneNumber = phoneTextField.text else {return}
+        UserDefaults.standard.set(phoneNumber, forKey: "userPhoneNumber")
         /*
          Firebase sends an SMS message containing an authentication code to the specified phone number and passes a verification ID to your completion function.
          You will need both the verification code and the verification ID to sign in the user.
@@ -77,7 +80,6 @@ class PhoneLoginVC: UIViewController {
                 
                 // Jump to verify otp page.
                 let otpVC = OtpVC()
-                otpVC.phoneNumber = phoneNumber
                 self.navigationController?.pushViewController(otpVC, animated: true)
                 
                 

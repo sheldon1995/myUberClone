@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
+
 extension UIView {
     
-    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat){
+    func anchor(top: NSLayoutYAxisAnchor?=nil, left: NSLayoutXAxisAnchor?=nil, bottom: NSLayoutYAxisAnchor?=nil, right: NSLayoutXAxisAnchor?=nil, paddingTop: CGFloat = 0, paddingLeft: CGFloat = 0, paddingBottom: CGFloat = 0, paddingRight: CGFloat = 0, width: CGFloat = 0, height: CGFloat = 0){
         
         // This is the way to activate programmatic constrains
         translatesAutoresizingMaskIntoConstraints = false
@@ -40,11 +42,31 @@ extension UIView {
     }
     
     func centerX(inView view: UIView, constant: CGFloat = 0){
+        // This is the way to activate programmatic constrains
+        translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: constant).isActive = true
     }
     
-    func centerY(inView view: UIView, constant: CGFloat = 0){
+    func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingLeft :CGFloat=0, constant: CGFloat = 0){
+        // This is the way to activate programmatic constrains
+        translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
+        if let left = leftAnchor{
+            anchor(left: left, paddingLeft:paddingLeft)
+        }
+    }
+    
+    func setDimensions(height:CGFloat, width:CGFloat){
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: height).isActive = true
+        widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
+    
+    func addShadow(){
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.6
+        layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        layer.masksToBounds = false
     }
 }
 
@@ -69,6 +91,7 @@ extension UIColor {
     static let myLightGray = rgb(red: 230, green: 230, blue: 230)
     static let mygray = rgb(red: 240, green: 240, blue: 240)
     static let paleBlue = rgb(red: 175, green: 238, blue: 238)
+    static let backgroundColor = UIColor.rgb(red: 25, green: 25, blue: 25)
 }
 
 extension UIViewController{
@@ -83,5 +106,60 @@ extension UIViewController{
     
     @objc func handleCancel(){
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func jumpToMainVC(){
+        let homeVC = HomeVC()
+        homeVC.configure()
+        let navController = UINavigationController(rootViewController: homeVC)
+        navController.modalPresentationStyle = .fullScreen
+        
+        self.present(navController, animated: true, completion: nil)
+    }
+    
+    func uploadUserDataAndJumpToMainVC(currentUid : String, values: [String:Any]){
+        USER_REF.child(currentUid).updateChildValues(values) { (error, ref) in
+            if let error = error {
+                print("DEBUG: Failed to upload user information \(error.localizedDescription)")
+                return
+            }
+            // Jump to main page.
+            self.jumpToMainVC()
+        }
+    }
+}
+
+
+extension MKPlacemark {
+    var address: String?{
+        get{
+            // Additional steet level information
+            guard let subThoroughFare = subThoroughfare else {return nil}
+            // The street address associated with the placemark.
+            guard let thoroughFare = thoroughfare else {return nil}
+            // The city associated with the placemark.
+            guard let locality = locality else {return nil}
+            // The state or province associated with the placemark.
+            guard let adminArea = administrativeArea else {return nil}
+            
+            return "\(subThoroughFare) \(thoroughFare), \(locality), \(adminArea)"
+        }
+    }
+}
+
+extension MKMapView{
+    func zoomTofit(annotations: [MKAnnotation]){
+        var zoomRect = MKMapRect.null
+        annotations.forEach { (annotation) in
+            // A point on a two-dimensional map projection.
+            let annotationPoint = MKMapPoint(annotation.coordinate)
+            // An MKMapRect data structure represents a rectangular area as seen on this two-dimensional map.
+            let pointRect = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0.01, height: 0.01)
+            // Returns a rectangle representing the union of the two rectangles.
+            zoomRect = zoomRect.union(pointRect)
+        }
+        // allowing you to specify additional space around the edges.
+        let insets = UIEdgeInsets(top: 120, left: 120, bottom: 290, right: 120)
+        setVisibleMapRect(zoomRect,edgePadding: insets, animated: true)
     }
 }
