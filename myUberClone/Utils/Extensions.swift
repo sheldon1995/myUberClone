@@ -95,10 +95,12 @@ extension UIColor {
 }
 
 extension UIViewController{
+    
     func hideKeyboardWhenTapped(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleRetractKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
+    
     @objc func handleRetractKeyboard(){
         // Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -108,10 +110,12 @@ extension UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-    func jumpToMainVC(){
-        let homeVC = HomeVC()
-        homeVC.configure()
-        let navController = UINavigationController(rootViewController: homeVC)
+    func jumpToContainerVC(){
+        let containerVC = ContainerController()
+        
+        // containerVC.configure()
+        let navController = UINavigationController(rootViewController: containerVC)
+        navController.isNavigationBarHidden = true
         navController.modalPresentationStyle = .fullScreen
         
         self.present(navController, animated: true, completion: nil)
@@ -124,7 +128,7 @@ extension UIViewController{
                 return
             }
             // Jump to main page.
-            self.jumpToMainVC()
+            self.jumpToContainerVC()
         }
     }
 }
@@ -159,7 +163,104 @@ extension MKMapView{
             zoomRect = zoomRect.union(pointRect)
         }
         // allowing you to specify additional space around the edges.
-        let insets = UIEdgeInsets(top: 120, left: 120, bottom: 290, right: 120)
+        let insets = UIEdgeInsets(top: 100, left: 120, bottom: 300, right: 120)
         setVisibleMapRect(zoomRect,edgePadding: insets, animated: true)
     }
+    
+    func addAnnotationAndSelect(forCoordinates coordinate: CLLocationCoordinate2D){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        addAnnotation(annotation)
+        selectAnnotation(annotation, animated: true)
+    }
+}
+
+extension UIViewController{
+    
+    func presentAlertController(withTitle title:String, withMessage message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert,animated: true)
+    }
+    
+    func shouldPresentLoadingView(_ present:Bool, message: String? = nil){
+        if present{
+            let loadingView = UIView()
+            loadingView.frame = view.frame
+            loadingView.backgroundColor = .black
+            loadingView.alpha = 0
+            loadingView.tag = 1
+            
+            let indicator = UIActivityIndicatorView()
+            indicator.style = .large//UIActivityIndicatorView.Style.large
+            indicator.center = view.center
+            
+            let label = UILabel()
+            label.text = message
+            label.font = UIFont.systemFont(ofSize: 24)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.alpha = 0.87
+            
+            view.addSubview(loadingView)
+            loadingView.addSubview(indicator)
+            loadingView.addSubview(label)
+            
+            label.centerX(inView: view)
+            label.anchor(top: indicator.bottomAnchor,paddingTop:  32)
+            
+            indicator.startAnimating()
+            UIView.animate(withDuration: 0.3){
+                loadingView.alpha = 0.7
+            }
+            
+        }
+        else{
+            view.subviews.forEach { (subview) in
+                if subview.tag == 1{
+                    UIView.animate(withDuration: 0.3, animations: {
+                        subview.alpha = 0
+                    }) { (_) in
+                        subview.removeFromSuperview()
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+extension UIAlertController {
+    func pruneNegativeWidthConstraints() {
+        for subView in self.view.subviews {
+            for constraint in subView.constraints where constraint.debugDescription.contains("width == - 16") {
+                subView.removeConstraint(constraint)
+            }
+        }
+    }
+}
+
+enum LocationType: Int, CaseIterable, CustomStringConvertible {
+    case home
+    case work
+    
+    var description: String{
+        switch self {
+        case .home:
+            return "Home"
+        case .work:
+            return "Work"
+        }
+    }
+    
+    var subtitle: String{
+        switch self {
+        case .home:
+            return "Add home"
+        case .work:
+            return "Add work"
+        }
+    }
+    
+  
 }

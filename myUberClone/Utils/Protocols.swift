@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
     case yourTrips
@@ -42,6 +43,21 @@ protocol MenuControllerDelegate: class {
 
 protocol RideActionViewDelegate: class {
     func upLoadTrip(_ view:RideActionView)
+    func cancelTrip()
+    func pickupPassenger()
+    func dropOffPassenger()
+    
+}
+
+protocol PickupVCDelegate: class {
+    func didAcceptTrip(_ trip: Trip)
+}
+
+protocol AddLocationVCDelegate:class {
+    func uploadLocation(type:LocationType, locationString: String)
 }
 
 
+protocol SettingVCDelegate:class {
+    func updateUser(_ controller: SettingVC)
+}

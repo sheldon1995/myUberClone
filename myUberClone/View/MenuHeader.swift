@@ -13,7 +13,7 @@ class MenuHeader: UIView {
     // MARK: - Properties
     
     private let user: User
-    
+    private var enabled = true
     private lazy var profileImageView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -27,9 +27,9 @@ class MenuHeader: UIView {
     
     private lazy var initialLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 42)
+        label.font = UIFont.systemFont(ofSize: 32)
         label.textColor = .white
-        label.text = "Wentao"
+        label.text = user.firstInitial
         return label
     }()
     
@@ -37,7 +37,7 @@ class MenuHeader: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
-        label.text = "Wentao Xie"
+        label.text = user.fullname
         return label
     }()
     
@@ -45,7 +45,7 @@ class MenuHeader: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text = "test@gmail.com"
+        label.text = user.email
        
         return label
     }()
@@ -100,7 +100,9 @@ class MenuHeader: UIView {
     // MARK: - Selectors
     
     @objc func handlePickupModeChanged() {
-        
+        enabled.toggle()
+        configureSwitch(enabled: enabled)
+    
     }
     
     // MARK: - Helper Functions

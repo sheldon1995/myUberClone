@@ -8,8 +8,8 @@
 
 import CoreLocation
 
-class LocationHandelr: NSObject, CLLocationManagerDelegate {
-    static let shared = LocationHandelr()
+class LocationHandler: NSObject, CLLocationManagerDelegate {
+    static let shared = LocationHandler()
     
     var locationManager : CLLocationManager!
     var location : CLLocation?

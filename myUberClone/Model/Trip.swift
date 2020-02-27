@@ -12,9 +12,16 @@ import MapKit
 enum TripState: Int{
     case requested = 0
     case accepted = 1
-    case inProgress = 2
-    case completed = 3
+    case driverArrived = 2
+    case inProgress = 3
+    case arrivedAtDestination = 4
+    case completed = 5
+    case rejected = 6
     
+}
+enum AnnotationType:String{
+    case pickup
+    case destination
 }
 
 struct Trip{

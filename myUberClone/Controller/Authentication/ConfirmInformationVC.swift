@@ -14,7 +14,7 @@ import GeoFire
 class ConfirmInformationVC: UIViewController {
     
     // MARK: Properties
-    var location = LocationHandelr.shared.locationManager.location
+    var location = LocationHandler.shared.locationManager.location
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -112,13 +112,13 @@ class ConfirmInformationVC: UIViewController {
         let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
         
         guard let currentUid = Auth.auth().currentUser?.uid else {return}
-      
+        
         let values = ["email": email,
                       "fullname": name,
                       "phone": phone!,
                       "accountType": accountTypeIndex,
                       "password":password] as [String : Any]
-
+        
         if accountTypeIndex == 1{
             let geofire = GeoFire(firebaseRef: DRIVER_LOCATIONS_REF)
             geofire.setLocation(self.location!, forKey: currentUid) { (error) in

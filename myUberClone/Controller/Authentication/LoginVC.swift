@@ -95,6 +95,7 @@ class LoginVC: UIViewController {
     
     // MARK: Handlers
     @objc func jumpToPhoneLogin(){
+        
         let phoneLoginVC = PhoneLoginVC()
         
         let navController = UINavigationController(rootViewController: phoneLoginVC)

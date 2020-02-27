@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+
 class LocationTableCell: UITableViewCell {
     
     // MARK: Properties
@@ -17,6 +18,7 @@ class LocationTableCell: UITableViewCell {
             addressLabel.text = placeMark?.address
         }
     }
+
     
     let titleLabel : UILabel = {
         let label = UILabel()
@@ -35,6 +37,7 @@ class LocationTableCell: UITableViewCell {
     // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         selectionStyle = .none
         // Create a stack view.
         let stack = UIStackView(arrangedSubviews: [titleLabel,addressLabel])
@@ -59,8 +62,6 @@ class LocationTableCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     

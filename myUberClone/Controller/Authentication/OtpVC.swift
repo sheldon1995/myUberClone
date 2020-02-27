@@ -13,7 +13,7 @@ let phone = UserDefaults.standard.string(forKey: "userPhoneNumber")
 
 class OtpVC: UIViewController {
     // MARK: Properties
-   
+    
     
     let label:UILabel = {
         let label = UILabel()
@@ -78,8 +78,8 @@ class OtpVC: UIViewController {
                 
                 USER_REF.observeSingleEvent(of: .value) { (snapshot) in
                     if(snapshot.hasChild(currentUid)){
-                        // Jump to main mage
-                        self.jumpToMainVC()
+                        //  jump to container VC 
+                        self.jumpToContainerVC()
                     }
                     else{
                         // Jump to information confirmation page.
